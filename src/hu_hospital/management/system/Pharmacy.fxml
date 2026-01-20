@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox spacing="20.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu_hospital.management.system.PharmacyController">
+   <children>
+      <Label style="-fx-font-weight: bold; -fx-font-size: 18;" text="Pharmacy Management" />
+      
+      <HBox spacing="20.0">
+         <children>
+            <VBox spacing="10.0" style="-fx-background-color: #ecf0f1; -fx-padding: 15; -fx-background-radius: 5;" HBox.hgrow="ALWAYS">
+               <children>
+                  <Label style="-fx-font-weight: bold; -fx-font-size: 14;" text="Pending Prescriptions" />
+                  <TableView fx:id="pendingPrescriptionsTable" prefHeight="250.0">
+                    <columns>
+                      <TableColumn fx:id="prescriptionIdColumn" prefWidth="100.0" text="Prescription ID" />
+                      <TableColumn fx:id="patientNameColumn" prefWidth="120.0" text="Patient Name" />
+                        <TableColumn fx:id="doctorNameColumn" prefWidth="120.0" text="Doctor" />
+                        <TableColumn fx:id="prescriptionDateColumn" prefWidth="120.0" text="Date" />
+                        <TableColumn fx:id="statusColumn" prefWidth="80.0" text="Status" />
+                    </columns>
+                  </TableView>
+                  <HBox spacing="10.0">
+                     <children>
+                        <Button onAction="#viewPrescription" prefWidth="120.0" style="-fx-background-color: #3498db; -fx-text-fill: white;" text="View Details" />
+                        <Button onAction="#dispenseMedication" prefWidth="120.0" style="-fx-background-color: #2ecc71; -fx-text-fill: white;" text="Dispense" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            
+            <VBox spacing="10.0" style="-fx-background-color: #ecf0f1; -fx-padding: 15; -fx-background-radius: 5;" HBox.hgrow="ALWAYS">
+               <children>
+                  <Label style="-fx-font-weight: bold; -fx-font-size: 14;" text="Prescription Details" />
+                  <GridPane hgap="10.0" vgap="10.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label text="Prescription ID:" />
+                        <Label fx:id="selectedPrescriptionIdLabel" GridPane.columnIndex="1" />
+                        <Label text="Patient:" GridPane.rowIndex="1" />
+                        <Label fx:id="selectedPatientLabel" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label text="Doctor:" GridPane.rowIndex="2" />
+                        <Label fx:id="selectedDoctorLabel" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label text="Diagnosis:" GridPane.rowIndex="3" />
+                        <Label fx:id="selectedDiagnosisLabel" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <Label text="Date:" GridPane.rowIndex="4" />
+                        <Label fx:id="selectedDateLabel" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                     </children>
+                  </GridPane>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      
+      <VBox spacing="15.0" style="-fx-background-color: #ecf0f1; -fx-padding: 15; -fx-background-radius: 5;">
+         <children>
+            <Label style="-fx-font-weight: bold; -fx-font-size: 14;" text="Medications" />
+            <TableView fx:id="medicationsTable" prefHeight="150.0">
+              <columns>
+                <TableColumn fx:id="medicationNameColumn" prefWidth="150.0" text="Medication" />
+                <TableColumn fx:id="dosageColumn" prefWidth="100.0" text="Dosage" />
+                  <TableColumn fx:id="frequencyColumn" prefWidth="120.0" text="Frequency" />
+                  <TableColumn fx:id="durationColumn" prefWidth="80.0" text="Duration" />
+                  <TableColumn fx:id="instructionsColumn" prefWidth="200.0" text="Instructions" />
+              </columns>
+            </TableView>
+            
+            <VBox spacing="10.0">
+               <children>
+                  <Label text="Pharmacist Notes:" />
+                  <TextArea fx:id="pharmacistNotesArea" prefRowCount="3" promptText="Enter any notes about dispensing..." />
+               </children>
+            </VBox>
+            
+            <HBox alignment="CENTER" spacing="15.0">
+               <children>
+                  <Button onAction="#checkInventory" prefWidth="120.0" style="-fx-background-color: #f39c12; -fx-text-fill: white;" text="Check Inventory" />
+                  <Button onAction="#printLabel" prefWidth="120.0" style="-fx-background-color: #95a5a6; -fx-text-fill: white;" text="Print Label" />
+                  <Button onAction="#completePrescription" prefWidth="120.0" style="-fx-background-color: #2ecc71; -fx-text-fill: white;" text="Complete" />
+               </children>
+            </HBox>
+            <Label fx:id="pharmacyStatusLabel" style="-fx-font-weight: bold;" />
+         </children>
+      </VBox>
+   </children>
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
+</VBox>
