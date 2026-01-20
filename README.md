@@ -36,20 +36,6 @@ A comprehensive hospital management system built with JavaFX and FXML for Apache
 - Quick navigation between modules
 - Status monitoring
 
-## Recent Fixes
-
-### Compilation Issues Fixed:
-- ✅ **Medication Class**: Made `Medication` class public and created separate file
-- ✅ **Import Statements**: Added proper imports for JavaFX layout classes
-- ✅ **Class Accessibility**: Fixed package-private class access issues
-- ✅ **Controller Dependencies**: Resolved cross-controller dependencies
-
-### Files Fixed:
-1. `DoctorConsultationController.java` - Added missing imports for VBox and GridPane
-2. `PharmacyController.java` - Fixed Medication class access
-3. `Prescription.java` - Removed inner Medication class
-4. `Medication.java` - Created as separate public class
-
 ## Project Structure
 
 ```
@@ -134,17 +120,11 @@ src/hu_hospital/management/system/
 - **Status Tracking**: Real-time patient status updates throughout the system
 - **Professional Forms**: Comprehensive forms for all medical processes
 
-## Sample Data
-
-The system comes pre-loaded with sample doctors:
-- Dr. John Smith (General Medicine)
-- Dr. Sarah Johnson (Cardiology)
-- Dr. Michael Brown (Pediatrics)
 
 ## Technical Requirements
 
-- Java 8 or higher
-- JavaFX (included with Java 8, separate module for Java 11+)
+- Java 
+- JavaFX 
 - Apache NetBeans IDE
 - Windows/Mac/Linux operating system
 
@@ -158,7 +138,3 @@ The system comes pre-loaded with sample doctors:
 - Electronic medical records (EMR)
 - Integration with medical devices
 - Multi-language support
-
-## Support
-
-For issues or questions about this hospital management system, please refer to the code comments and JavaDoc documentation within the source files.
